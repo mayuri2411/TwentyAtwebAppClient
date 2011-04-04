@@ -1,0 +1,313 @@
+.twentyatbox img, .twentyatfooter img {
+	width: 64px;
+	height: 48px;
+	border-radius: 3px;
+}
+body{
+	background-color: #dedede;
+	margin: 0 auto;
+	padding: 0; 
+	width: 320px;
+	height: 480px;
+}
+
+.twentyatheader {
+
+	width: 100%; 
+	background-image:url('../images/navbar_bg.png');
+	height: 36px;
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+
+.thballfriends {
+	
+	top: 0px; 
+	left: 0px; 
+	padding: 0px; 
+	text-align: right; 
+	margin: 0; 
+	width: 50%; 
+	/*border: thick solid red;*/
+	display: inline;
+	background-image:url('../images/navbar_buttons/segmented1_allfriends_selected@2x.png');
+	float: left; 
+	height: 36px;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	border: none;
+}
+
+/*div.thballfriends img {
+	float: left; 
+	width:inherit;
+	height: 32px;
+	background-image:url('../images/navbar_buttons/segmented1_allfriends_selected@2x.png');
+	border: 1px solid red;
+	background-size: 100%;
+	border: none;
+	background-repeat: no-repeat;
+	display: inline;
+	height: 36px;
+
+}*/
+
+.thbconversation {
+	float: right; 
+	top: 0px; 
+	left: 0px; 
+	padding: 0px; 
+	text-align: right; 
+	margin: 0; 
+	width: 50%; 
+	display: inline;
+	background-image: url('../images/navbar_buttons/segmented1_conversationlist@2x.png');
+	height: 36px;
+	/*border: 1px solid orange;*/
+	background-repeat: no-repeat;
+	background-size: 100%;
+	border: none;
+}
+
+/*div.thbconversation img {
+	float: left; 
+	height: 32px;
+	width:inherit;
+	background-image: url('../images/navbar_buttons/segmented1_conversationlist@2x.png');
+	border: 1px solid orange;
+	background-size: 100%;
+	border: none;
+	background-repeat: no-repeat;
+	display: inline;
+	height: 36px;
+
+}*/
+
+.twentyatbody {
+	padding: 0 0 0 0; 
+	margin: 0 auto;
+	text-align: center; 
+	width: 320px;
+	display: block;
+	height: 340px;
+	/*width: 320px;*/
+}
+
+.twentyatbox {
+	font-size: 0.7em; 
+	text-align: center; 
+	margin: 0; 
+	display: inline; 
+	float: left; 
+	padding: 3px 5px 3px 6px; 
+	border: 1px solid; 
+	border-right-color: #d3d3d3; 
+	border-bottom-color: #d4d4d4; 
+	border-left-color: #e5e5e5;
+	border-top-color: #f2f2f2;
+	height: 60px;
+	width: 64px;
+}
+
+.avtarimg1 {
+	background-image: url('../images/avatar_empty@2x.png');
+}
+.avtarimg2 {
+	background-image: url('../images/avatar_empty@2x.png');
+}
+.avtarimg3 {
+	background-image: url('../images/avatar_empty@2x.png');
+}
+.avtarimg4 {
+	background-image: url('../images/avatar_empty@2x.png');
+}
+.avtarimg5 {
+	background-image: url('../images/avatar_empty@2x.png');
+}
+.avtarimg6 {
+	background-image: url('../images/avatar_empty@2x.png');
+}
+.avtarimg7 {
+	background-image: url('../images/avatar_empty@2x.png');
+}
+.avtarimg8 {
+	background-image: url('../images/avatar_empty@2x.png');
+}
+.avtarimg9 {
+	background-image: url('../images/avatar_empty@2x.png');
+}
+.avtarimg10 {
+	background-image: url('../images/avatar_empty@2x.png');
+}
+.avtarimg11 {
+	background-image: url('../images/avatar_empty@2x.png');
+}
+.avtarimg12 {
+	background-image: url('../images/avatar_empty@2x.png');
+}
+.avtarimg13 {
+	background-image: url('../images/avatar_empty@2x.png');
+}
+.avtarimg14 {
+	background-image: url('../images/avatar_empty@2x.png');
+}
+.avtarimg15 {
+	background-image: url('../images/avatar_empty@2x.png');
+}
+.avtarimg16 {
+	background-image: url('../images/avatar_empty@2x.png');
+}
+.avtarimg17 {
+	background-image: url('../images/avatar_empty@2x.png');
+}
+.avtarimg18 {
+	background-image: url('../images/avatar_empty@2x.png');
+}
+.avtarimg19 {
+	background-image: url('../images/avatar_empty@2x.png');
+}
+.avtarimg20 {
+	background-image: url('../images/avatar_empty@2x.png');
+}
+
+.avtartext {
+	color: #7e7e77;
+	/*text-shadow: 2px red;*/
+	padding: 0; 
+	margin: 0;
+}
+
+.avtar {
+	float: left; 
+	margin: 0; 
+	padding: 0 0 0 0; 
+	display: inline;
+	border-radius: 5px;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	border: none;
+	height: 46px;
+	width: 60px;
+	/*z-index: -1;
+	-moz-box-shadow:inset 0 0 3px #000000;
+	-webkit-box-shadow:inset 0 0 3px #000000;
+	box-shadow:inset 0 0 3px #000000;*/
+
+}
+
+.twentyatfooter {
+	/*border: thick solid orange;*/
+	position: relative;
+	background-size: 100%;
+	display: block;
+	height: 48px;
+	width: 320px;
+	/*border:thin solid red;*/
+}
+
+.footerbox {
+	top: 0px; 
+	left: 0px; 
+	padding: 0px; 
+	margin: 0; 
+	float: left;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	border: none;
+	height: 48px;
+	width: 64px;
+}
+
+.twentyattab {
+	background-image: url('../images/navbar_buttons/highlighted_twentyat.png');
+}
+
+.streams {
+	background-image: url('../images/navbar_buttons/stream.png');
+}
+
+.mapoftwentyat {
+	background-image: url('../images/navbar_buttons/map.png');
+}
+
+.game {
+	background-image: url('../images/navbar_buttons/game.png');
+}
+
+.settings {
+	background-image: url('../images/navbar_buttons/settings.png');
+}
+
+.userinteract {
+
+	width: 100%; 
+	background-image:url('../images/navbar_bg.png');
+	height: 32px;
+	margin: 0;
+	padding: 2px;
+	display: block;
+	position: absolute;
+	background-repeat: repeat-x;
+	/*background-size: 100%;*/
+	border: none;
+
+}
+
+.compose {
+	background-image:url('../images/friend_select_buttons/1_1_compose@2x.png');
+	float: left;
+	display: inline;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	border: none;
+	height: inherit;
+	width: 64px;
+}
+
+.call {
+	background-image:url('../images/friend_select_buttons/1_2_call@2x.png');
+	float: left;
+	display: inline;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	border: none;
+	height: inherit;
+	width: 38px;
+}
+
+.play {
+	background-image:url('../images/friend_select_buttons/1_3_play@2x.png');
+
+	display: inline;
+	float: left;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	border: none;
+	height: inherit;
+	width: 42px;
+}
+
+.profile {
+	background-image:url('../images/friend_select_buttons/1_4_profile@2x.png');
+
+	float: left;
+	display: inline;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	border: none;
+	height: inherit;
+	width: 56px;
+}
+
+.cancel {
+	background-image:url('../images/friend_select_buttons/select_x@2x.png');
+
+	display: inline;
+	float: right;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	border: none;
+	height: inherit;
+	width: 40px;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1 user-scalable=no,width = 320" />
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+        <meta name="apple-mobile-web-app-capable" content="yes" /> 
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+
+        <title>Add Friends</title>
+        <link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
+
+          <link rel="stylesheet" href="css/addFriend.css" type="text/css"/>
+            <script src="http://code.jquery.com/jquery-1.5.js"></script>
+
+        <script src="js/main.js" type="text/javascript" ></script>
+        <script src="js/TwentyAtUserProfile.js" type="text/javascript" ></script>
+        <script src="js/localStorage/LocalStorageDatabase.js" type="text/javascript" ></script>
+        <script src="js/addFriends/addFriends.js" type="text/javascript"></script>
+        <script src="js/TwentyAtFriend.js" type="text/javascript"></script>
+        <script src="js/TwentyAtFriends.js" type="text/javascript"></script>
+        
+       <script src="js/json/json2.js" type="text/javascript" ></script>
+       <script src="js/json/jsonStringify.js" type="text/javascript" ></script>
+       
+<script src="js/TwentyAtContact.js" type="text/javascript"></script>
+        <script src="js/TwentyAtContacts.js" type="text/javascript"></script>
+<script src="js/iscroll.js" type="text/javascript"></script>
+<script type="text/javascript">
+    
+		/* Local JavaScript Here */
+		var initScrolling = function() {
+			var scroller = new iScroll('scroller', { bounceLock:true, desktopCompatibility: true});
+			var buttons = document.getElementsByClassName("button");
+			for (var i = 0, len = buttons.length; i < len; i++) {
+				buttons[i].addEventListener("touchstart", function() {
+					this.className = "button touched";
+				});
+				buttons[i].addEventListener("touchend", function() {
+					this.className = "button";
+				});
+			}
+		};
+            var myScroll; 
+            function loaded() {
+            alert('loaded in add frnds');
+                    myScroll = new iScroll('wrapper1', { scrollbarClass: 'myScrollbar' }); 
+            }
+            document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+            document.addEventListener('DOMContentLoaded', loaded, false);
+	</script>
+
+        <script type="text/javascript" charset="utf-8">
+        $(document).ready(function() {
+            if(existsData("Profile")){
+                alert('profile exists');
+                $(location).attr('href', 'index3.html');
+            }
+ 
+           var token=window.location.toString().split("=")[1];
+           alert('Token:::: '+token);
+           if(! (token==undefined || token==null)){ 
+           alert('calling server........');
+           callLoginFromServer(token);
+           }
+
+          function goBack(){
+               window.location("index.html");
+           }
+          });
+
+
+        </script>
+        </head>
+        <body>
+<app> </app>   
+<div id="main-wrapper" style="display: none">
+          <div id="header1"> <a href="#home" class="navbutton back"></a> <b>Add Friends</b>
+             <a class="continue navbutton" href="#" onclick="callReviewFriends();"></a>
+          <div class="clear"></div>
+          <div class="marB5">
+             <!--  Search  -->  <form id="search" action=""> 
+                  <input type="text" name="search-text" placeholder="Search for friends on facebook" id="search-text" class=" ui-input-search search" />
+            </form></div>
+            </div>
+ <div id="wrapper1">
+<!--FACEBOOK FRIENDS LODING DONE INSIDE THIS DIV-->
+</div>
+ 
+</div>
+  
+<div id="ajaxLoading" style="display: block;vertical-align: middle;" >
+    <p style="text-align: center">
+    <img src="images/ajax-loader_process1.gif"></img>
+    </p>
+</div>
+
+</body>
+</html>
+
+
+
+
+
