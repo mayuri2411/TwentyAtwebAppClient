@@ -1,0 +1,29 @@
+<html>
+    <head>
+         <script src="js/TwentyAtUserProfile.js" type="text/javascript" ></script>
+        <script src="js/localStorage/LocalStorageDatabase.js" type="text/javascript" ></script>
+        <script src="js/TwentyAtFriends.js" type="text/javascript"></script>
+        <script src="js/TwentyAtFriend.js" type="text/javascript"></script>
+
+         <!-- JSON Includes-->
+       <script src="js/json/json.js" type="text/javascript" ></script>
+       <script src="js/json/jsonStringify.js" type="text/javascript" ></script>
+     
+<script type="text/javascript">
+function parseTwentyAtFriends(){
+            var friendsJSON="{'friends':[{'country':'','identifier':null,'twentyatUserId':'b0a16059-26b1-4f64-ad91-f8ffcf52db59','middleName':null,'photo':'http://graph.facebook.com/100002002832778/picture?type=normal','locality':'','postalCode':null,'region':'','streetAddress':null,'socialNetworkId':100002002832778,'isActive':false,'email':'example@email.com','firstName':'Sagar','lastName':'Pambhar','mobilePhone':null,'friendlyName':null,'twentyatGroups':[{'twentyatUserId':'b0a16059-26b1-4f64-ad91-f8ffcf52db59','twentyatGroupId':12,'groupName':'20@ Group','friendsMappings':[]}],'contactPersons':[],'messages':[]},{'country':'','identifier':null,'twentyatUserId':'852fe8e2-c523-4a9d-b535-5466c7a22562','middleName':null,'photo':'http://graph.facebook.com/100000934539911/picture?type=normal','locality':'','postalCode':null,'region':'','streetAddress':null,'socialNetworkId':100000934539911,'isActive':false,'email':'example@email.com','firstName':'Riddhish','lastName':'Ojha','mobilePhone':null,'friendlyName':null,'twentyatGroups':[{'twentyatUserId':'852fe8e2-c523-4a9d-b535-5466c7a22562','twentyatGroupId':13,'groupName':'20@ Group','friendsMappings':[]}],'contactPersons':[],'messages':[]}],'status':{'message':'ok','code':0}}";
+            var arrObj=new TwentyAtFriends(friendsJSON);
+            //alert(arrObj.innerElement[0].lastName);
+            var strArray=JSONstring.make(arrObj)
+            alert(strArray);
+            insertData("Friends",strArray);
+            var friendsArray=selectData("Friends");
+            var friendsobj=eval("("+friendsArray+")");
+            alert(friendsobj.friends[0].firstName);
+}
+</script>
+    </head>
+    <body>
+<form><input value="Parse" type="button" onClick="parseTwentyAtFriends()"</form>
+</body>
+</html>
