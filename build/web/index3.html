@@ -1,0 +1,556 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	
+<head>
+	<!--<meta name="viewport" content="user-scalable=no, width=device-width" />-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1 user-scalable=no,width = 320" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+	<title> TwentyAt </title>
+<!--
+ 
+<link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
+
+-->
+	<link rel="stylesheet" type="text/css" href="css/default.css"  media="all"/>
+	<script type="text/javascript">
+		var isFriendSet = new Array();
+	</script>
+	
+	<script type="text/javascript" charset="utf-8" src="js/phonegap.0.9.4.js"></script>      
+	<script type="text/javascript" charset="utf-8" src="js/jquery-1.5.1.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/jquery-ui-1.8.10.custom.min.js"></script>
+	
+	<script type="text/javascript" charset="utf-8" src="js/LocalStorageDatabase.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/TwentyAtFriend.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/TwentyAtFriends.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/TwentyAtUserProfile.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/loadFriends.js"></script>
+	<style>
+		p { color:green; font-weight:bolder; margin:3px 0 0 10px; }
+		span { color:red; }
+		
+		
+	</style>
+
+	<script>
+		jQuery.each(jQuery.browser, function(i, val) {
+		  $("<div>" + i + " : <span>" + val + "</span>")
+					.appendTo( document.body );
+		});
+		
+		//var jQT = new $.jQTouch();
+		
+		function callMap() {
+			window.location="socialmap.html"
+		}
+	</script>
+	
+	<script type="text/javascript" charset="utf-8">
+	$(document).ready(function() {
+		$('#thballfriends').live('touchstart', function() {
+			$('#thbconversation').css('background-image', 'url(images/navbar_buttons/segmented1_conversationlist@2x.png)');
+			$('#thballfriends').css('background-image', 'url(images/navbar_buttons/segmented1_allfriends_selected@2x.png)');
+			
+			$('#twentyatbody').load('twentyatbody.html', function () { 
+				$('#twentyatbody').css('height', '340px');
+				extractFriends();
+			});
+		});
+		
+		$('#thbconversation').live('touchstart', function() {
+			$('#thbconversation').css('background-image', 'url(images/navbar_buttons/segmented1_conversationlist_selected@2x.png)');
+			$('#thballfriends').css('background-image', 'url(images/navbar_buttons/segmented1_allfriends@2x.png)');
+			
+			//$(location).attr('href', 'compose.html');
+			$('#twentyatbody').load('conversation.html');
+			$('#twentyatbody').css('height', '320px');
+		});
+		
+		$('#twentyatbox1').live('touchstart', function() {
+			/*var elementId = this.id;
+			alert(elementId);
+			var elementLength = elementId.length;
+			var elementNumber = elementId[elementLength - 1];
+			alert(elementNumber);*/
+			//alert("over here");
+			if (isFriendSet[0] == "true") {
+				//alert("over there");
+				$('#twentyatfooter').load('singleuser.html');
+				$('#twentyatbox1').css('-webkit-box-shadow', 'inset 0 0 6px #2cb7f8, 0 0 4px #2f7393');
+				$('#twentyatbox1').css('margin', '1px');
+				$('#twentyatbox').css('height', '56px');
+				$('#twentyatbox').css('width', '56px');
+			}
+			else {
+				$(location).attr('href', 'addfriends.html');
+			}
+		});
+		
+		$('#twentyatbox2').live('touchstart', function() {
+			if (isFriendSet[1] == "true") {
+				$('#twentyatfooter').load('singleuser.html');
+				$('#twentyatbox2').css('-webkit-box-shadow', 'inset 0 0 15px #2cb7f8');
+			}
+			else {
+				$(location).attr('href', 'addfriends.html');
+			}
+		});
+		
+		$('#twentyatbox3').live('touchstart', function() {
+			if (isFriendSet[2] == "true") {
+				$('#twentyatfooter').load('singleuser.html');
+				$('#twentyatbox3').css('border-right-color', '2a8dbd');
+				$('#twentyatbox3').css('border-bottom-color', '2a8dbd');
+				$('#twentyatbox3').css('border-left-color', '2a8dbd');
+				$('#twentyatbox3').css('border-top-color', '2a8dbd');
+			}
+			else {
+				$(location).attr('href', 'addfriends.html');
+			}
+		});
+		
+		$('#twentyatbox4').live('touchstart', function() {
+			if (isFriendSet[3] == "true") {
+				$('#twentyatfooter').load('singleuser.html');
+				$('#twentyatbox4').css('border-right-color', '2a8dbd');
+				$('#twentyatbox4').css('border-bottom-color', '2a8dbd');
+				$('#twentyatbox4').css('border-left-color', '2a8dbd');
+				$('#twentyatbox4').css('border-top-color', '2a8dbd');
+			}
+			else {
+				$(location).attr('href', 'addfriends.html');
+			}
+		});
+		
+		$('#twentyatbox5').live('touchstart', function() {
+			if (isFriendSet[4] == "true") {
+				$('#twentyatfooter').load('singleuser.html');
+				$('#twentyatbox5').css('border-right-color', '2a8dbd');
+				$('#twentyatbox5').css('border-bottom-color', '2a8dbd');
+				$('#twentyatbox5').css('border-left-color', '2a8dbd');
+				$('#twentyatbox5').css('border-top-color', '2a8dbd');
+			}
+			else {
+				$(location).attr('href', 'addfriends.html');
+			}
+		});
+		
+		$('#twentyatbox6').live('touchstart', function() {
+			if (isFriendSet[5] == "true") {
+				$('#twentyatfooter').load('singleuser.html');
+				$('#twentyatbox6').css('border-right-color', '2a8dbd');
+				$('#twentyatbox6').css('border-bottom-color', '2a8dbd');
+				$('#twentyatbox6').css('border-left-color', '2a8dbd');
+				$('#twentyatbox6').css('border-top-color', '2a8dbd');
+			}
+			else {
+				$(location).attr('href', 'addfriends.html');
+			}
+		});
+		
+		$('#twentyatbox7').live('touchstart', function() {
+			if (isFriendSet[6] == "true") {
+				$('#twentyatfooter').load('singleuser.html');
+				$('#twentyatbox7').css('border-right-color', '2a8dbd');
+				$('#twentyatbox7').css('border-bottom-color', '2a8dbd');
+				$('#twentyatbox7').css('border-left-color', '2a8dbd');
+				$('#twentyatbox7').css('border-top-color', '2a8dbd');
+			}
+			else {
+				$(location).attr('href', 'addfriends.html');
+			}
+		});
+		
+		$('#twentyatbox8').live('touchstart', function() {
+			if (isFriendSet[7] == "true") {
+				$('#twentyatfooter').load('singleuser.html');
+				$('#twentyatbox8').css('border-right-color', '2a8dbd');
+				$('#twentyatbox8').css('border-bottom-color', '2a8dbd');
+				$('#twentyatbox8').css('border-left-color', '2a8dbd');
+				$('#twentyatbox8').css('border-top-color', '2a8dbd');
+			}
+			else {
+				$(location).attr('href', 'addfriends.html');
+			}
+		});
+		
+		$('#twentyatbox9').live('touchstart', function() {
+			if (isFriendSet[8] === "true") {
+				$('#twentyatfooter').load('singleuser.html');
+				$('#twentyatbox9').css('border-right-color', '2a8dbd');
+				$('#twentyatbox9').css('border-bottom-color', '2a8dbd');
+				$('#twentyatbox9').css('border-left-color', '2a8dbd');
+				$('#twentyatbox9').css('border-top-color', '2a8dbd');
+			}
+			else {
+				$(location).attr('href', 'addfriends.html');
+			}
+		});
+		
+		$('#twentyatbox10').live('touchstart', function() {
+			if (isFriendSet[9] === "true") {
+				$('#twentyatfooter').load('singleuser.html');
+				$('#twentyatbox10').css('border-right-color', '2a8dbd');
+				$('#twentyatbox10').css('border-bottom-color', '2a8dbd');
+				$('#twentyatbox10').css('border-left-color', '2a8dbd');
+				$('#twentyatbox10').css('border-top-color', '2a8dbd');
+			}
+			else {
+				$(location).attr('href', 'addfriends.html');
+			}
+		});
+		
+		$('#twentyatbox11').live('touchstart', function() {
+			if (isFriendSet[10] === "true") {
+				$('#twentyatfooter').load('singleuser.html');
+				$('#twentyatbox11').css('border-right-color', '2a8dbd');
+				$('#twentyatbox11').css('border-bottom-color', '2a8dbd');
+				$('#twentyatbox11').css('border-left-color', '2a8dbd');
+				$('#twentyatbox11').css('border-top-color', '2a8dbd');
+			}
+			else {
+				$(location).attr('href', 'addfriends.html');
+			}
+		});
+		
+		$('#twentyatbox12').live('touchstart', function() {
+			if (isFriendSet[11] === "true") {
+				$('#twentyatfooter').load('singleuser.html');
+				$('#twentyatbox12').css('border-right-color', '2a8dbd');
+				$('#twentyatbox12').css('border-bottom-color', '2a8dbd');
+				$('#twentyatbox12').css('border-left-color', '2a8dbd');
+				$('#twentyatbox12').css('border-top-color', '2a8dbd');
+			}
+			else {
+				$(location).attr('href', 'addfriends.html');
+			}
+		});
+				
+		$('#twentyatbox13').live('touchstart', function() {
+			if (isFriendSet[12] === "true") {
+				$('#twentyatfooter').load('singleuser.html');
+				$('#twentyatbox13').css('border-right-color', '2a8dbd');
+				$('#twentyatbox13').css('border-bottom-color', '2a8dbd');
+				$('#twentyatbox13').css('border-left-color', '2a8dbd');
+				$('#twentyatbox13').css('border-top-color', '2a8dbd');
+			}
+			else {
+				$(location).attr('href', 'addfriends.html');
+			}
+		});
+		
+		$('#twentyatbox14').live('touchstart', function() {
+			if (isFriendSet[13] === "true") {
+				$('#twentyatfooter').load('singleuser.html');
+				$('#twentyatbox14').css('border-right-color', '2a8dbd');
+				$('#twentyatbox14').css('border-bottom-color', '2a8dbd');
+				$('#twentyatbox14').css('border-left-color', '2a8dbd');
+				$('#twentyatbox14').css('border-top-color', '2a8dbd');
+			}
+			else {
+				$(location).attr('href', 'addfriends.html');
+			}
+		});
+		
+		$('#twentyatbox15').live('touchstart', function() {
+			if (isFriendSet[14] === "true") {
+				$('#twentyatfooter').load('singleuser.html');
+				$('#twentyatbox15').css('border-right-color', '2a8dbd');
+				$('#twentyatbox15').css('border-bottom-color', '2a8dbd');
+				$('#twentyatbox15').css('border-left-color', '2a8dbd');
+				$('#twentyatbox15').css('border-top-color', '2a8dbd');
+			}
+			else {
+				$(location).attr('href', 'addfriends.html');
+			}
+		});
+		
+		$('#twentyatbox16').live('touchstart', function() {
+			if (isFriendSet[15] === "true") {
+				$('#twentyatfooter').load('singleuser.html');
+				$('#twentyatbox16').css('border-right-color', '2a8dbd');
+				$('#twentyatbox16').css('border-bottom-color', '2a8dbd');
+				$('#twentyatbox16').css('border-left-color', '2a8dbd');
+				$('#twentyatbox16').css('border-top-color', '2a8dbd');
+			}
+			else {
+				$(location).attr('href', 'addfriends.html');
+			}
+		});
+		
+		$('#twentyatbox17').live('touchstart', function() {
+			if (isFriendSet[16] === "true") {
+				$('#twentyatfooter').load('singleuser.html');
+				$('#twentyatbox17').css('border-right-color', '2a8dbd');
+				$('#twentyatbox17').css('border-bottom-color', '2a8dbd');
+				$('#twentyatbox17').css('border-left-color', '2a8dbd');
+				$('#twentyatbox17').css('border-top-color', '2a8dbd');
+			}
+			else {
+				$(location).attr('href', 'addfriends.html');
+			}
+		});
+		
+		$('#twentyatbox18').live('touchstart', function() {
+			if (isFriendSet[17] === "true") {
+				$('#twentyatfooter').load('singleuser.html');
+				$('#twentyatbox18').css('border-right-color', '2a8dbd');
+				$('#twentyatbox18').css('border-bottom-color', '2a8dbd');
+				$('#twentyatbox18').css('border-left-color', '2a8dbd');
+				$('#twentyatbox18').css('border-top-color', '2a8dbd');
+			}
+			else {
+				$(location).attr('href', 'addfriends.html');
+			}
+		});
+		
+		$('#twentyatbox19').live('touchstart', function() {
+			if (isFriendSet[18] === "true") {
+				$('#twentyatfooter').load('singleuser.html');
+				$('#twentyatbox19').css('border-right-color', '2a8dbd');
+				$('#twentyatbox19').css('border-bottom-color', '2a8dbd');
+				$('#twentyatbox19').css('border-left-color', '2a8dbd');
+				$('#twentyatbox19').css('border-top-color', '2a8dbd');
+			}
+			else {
+				$(location).attr('href', 'addfriends.html');
+			}
+		});
+		
+		$('#twentyatbox20').live('touchstart', function() {
+			if (isFriendSet[19] === "true") {
+				$('#twentyatfooter').load('singleuser.html');
+				$('#twentyatbox20').css('border-right-color', '2a8dbd');
+				$('#twentyatbox20').css('border-bottom-color', '2a8dbd');
+				$('#twentyatbox20').css('border-left-color', '2a8dbd');
+				$('#twentyatbox20').css('border-top-color', '2a8dbd');
+			}
+			else {
+				$(location).attr('href', 'addfriends.html');
+			}
+		});
+		
+		$('#compose').live('touchstart', function() {
+			//alert('u clicked compose');
+			$(location).attr('href', 'compose.html');
+			
+				
+		});
+	});
+		/*$('#twentyatheaderbuttonallfriends').bind('click', 
+			function () {
+				alert('Hi, you clicked on all friends.');
+		});*/
+		
+		
+
+	
+		$(document).ready(function() {
+			var i = 0;
+			for(i=0; i<20; i++)
+			{
+				isFriendSet[i] = "false";
+			}
+		
+				//alert("'#friendimg"+ (i+1) + "'");
+				//alert("'url(" + friendsobj.friends[i].photo + ")'");
+				
+				//alert($("'#friendimg"+ (i+1) + "'").css('background-image', urlString));
+				
+				
+				//alert(name);
+				//$("'#friendimg"+ (i+1) + "'")
+			extractFriends();
+		});
+		
+		/*$('.twentyatbox').live('touchstart', function(event) {
+			//alert("hi u touched me");
+			var elementId = this.id;
+			alert(elementId);
+			var elementLength = elementId.length;
+			var elementNumber = elementId[elementLength - 1];
+			alert(elementNumber);
+			if (isFriendSet[elementNumber-1] === "true") {
+				$('#twentyatfooter2').load('singleuser.html');
+				$('#twentyatfooter').toggle();
+			}
+			else {
+				$(location).attr('href', 'addfriends.html');
+			}
+		});*/
+
+	</script>
+</head>
+<!--
+<html>
+	<head>
+	
+	</head>
+	<body>
+		<a href="javascript:alert(navigator.userAgent)">User Agent</a>
+	</body>	
+</html>
+-->
+
+<body >
+	
+<div id="twentyatcontainer" >
+	<div class="twentyatheader" id="twentyatheader" style="">
+
+			<div id="thballfriends" 
+				class="thballfriends">
+			</div>
+
+			<div id="thbconversation" 
+				class="thbconversation">
+			</div>
+
+	</div>
+
+	<div class="twentyatbody" id="twentyatbody" style="">
+		<div id="twentyatbox1" class="twentyatbox">
+			<div id="friendimg1" class="avtar avtarimg1">
+
+			</div>
+			<div id="friendname1" class="avtartext">Add Friend</div>
+		</div>
+		<div id="twentyatbox2" class="twentyatbox">
+			<div id="friendimg2" class="avtar avtarimg2">
+
+			</div>
+			<div id="friendname2" class="avtartext">Add Friend</div>
+		</div>
+		<div id="twentyatbox3" class="twentyatbox">
+			<div id="friendimg3" class="avtar avtarimg3">
+
+			</div>
+			<div id="friendname3" class="avtartext">Add Friend</div>
+		</div>
+		<div id="twentyatbox4" class="twentyatbox">
+			<div id="friendimg4" class="avtar avtarimg4">
+			</div>
+			<div id="friendname4" class="avtartext">Add Friend</div>
+		</div>
+		<div id="twentyatbox5" class="twentyatbox" style="clear: both;">
+			<div id="friendimg5" class="avtar avtarimg5">
+
+			</div>
+			<div id="friendname5" class="avtartext">Add Friend</div>
+		</div>
+		<div id="twentyatbox6" class="twentyatbox">
+			<div id="friendimg6" class="avtar avtarimg6">
+
+			</div>
+			<div id="friendname6" class="avtartext">Add Friend</div>
+		</div>
+		<div id="twentyatbox7" class="twentyatbox">
+			<div id="friendimg7" class="avtar avtarimg7" >
+
+			</div>
+			<div id="friendname7" class="avtartext">Add Friend</div>
+		</div>
+		<div id="twentyatbox8" class="twentyatbox">
+			<div id="friendimg8" class="avtar avtarimg8" >
+
+			</div>
+			<div id="friendname8" class="avtartext" >Add Friend</div>
+		</div>
+		<div id="twentyatbox9" class="twentyatbox" style="clear: both;">
+			<div id="friendimg9" class="avtar avtarimg9">
+
+			</div>
+			<div id="friendname9" class="avtartext">Add Friend</div>
+		</div>
+		<div id="twentyatbox10" class="twentyatbox">
+			<div id="friendimg10" class="avtar avtarimg10" >
+
+			</div>
+			<div id="friendname10" class="avtartext">Add Friend</div>
+		</div>
+		<div id="twentyatbox11" class="twentyatbox">
+			<div id="friendimg11" class="avtar avtarimg11" >
+
+			</div>
+			<div id="friendname11" class="avtartext">Add Friend</div>
+		</div>
+		<div id="twentyatbox12" class="twentyatbox">
+			<div id="friendimg12" class="avtar avtarimg12" >
+
+			</div>
+			<div id="friendname12" class="avtartext">Add Friend</div>
+		</div>
+		<div id="twentyatbox13" class="twentyatbox" style="clear: both;">
+			<div id="friendimg13" class="avtar avtarimg13" >
+
+			</div>
+			<div id="friendname13" class="avtartext">Add Friend</div>
+		</div>
+		<div id="twentyatbox14" class="twentyatbox">
+			<div id="friendimg14" class="avtar avtarimg14" >
+
+			</div>
+			<div id="friendname14" class="avtartext">Add Friend</div>
+		</div>
+		<div id="twentyatbox15" class="twentyatbox">
+			<div id="friendimg15" class="avtar avtarimg15" >
+
+			</div>
+			<div id="friendname15" class="avtartext">Add Friend</div>
+		</div>
+		<div id="twentyatbox16" class="twentyatbox">
+			<div id="friendimg16" class="avtar avtarimg16" >
+
+			</div>
+			<div id="friendname16" class="avtartext">Add Friend</div>
+		</div>
+		<div id="twentyatbox17" class="twentyatbox" style="clear: both;">
+			<div id="friendimg17" class="avtar avtarimg17" >
+
+			</div>
+			<div id="friendname17" class="avtartext">Add Friend</div>
+		</div>
+		<div id="twentyatbox18" class="twentyatbox">
+			<div id="friendimg18" class="avtar avtarimg18" >
+
+			</div>
+			<div id="friendname18" class="avtartext">Add Friend</div>
+		</div>
+		<div id="twentyatbox19" class="twentyatbox">
+			<div id="friendimg19" class="avtar avtarimg19" >
+
+			</div>
+			<div id="friendname19" class="avtartext">Add Friend</div>
+		</div>
+		<div id="twentyatbox20" class="twentyatbox">
+			<div id="friendimg20" class="avtar avtarimg20" >
+
+			</div>
+			<div id="friendname20" class="avtartext">Add Friend</div>
+		</div>
+	</div>
+	
+	<div id="twentyatfooter" class="twentyatfooter">
+		<div id="twentyattab" class="footerbox twentyattab">
+
+		</div>
+		<div id="streams" class="footerbox streams">
+
+		</div>
+		<div id="mapoftwentyat" class="footerbox mapoftwentyat" >
+
+		</div>
+		<div id="game" class="footerbox game" >
+
+		</div>
+		<div id="settings" class="footerbox settings" >
+
+		</div>
+	</div>
+
+</div>
+</body>
+</html>

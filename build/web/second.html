@@ -1,0 +1,107 @@
+
+            
+
+
+            <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1 user-scalable=no,width = 320" />
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+        <title>Add Friends</title>
+        <link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
+
+          <link rel="stylesheet" href="css/addFriend.css" type="text/css"/>
+            <script src="http://code.jquery.com/jquery-1.5.js"></script>
+
+        <script src="js/main.js" type="text/javascript" ></script>
+        <script src="js/TwentyAtUserProfile.js" type="text/javascript" ></script>
+        <script src="js/localStorage/LocalStorageDatabase.js" type="text/javascript" ></script>
+        <script src="js/addFriends/addFriends.js" type="text/javascript"></script>
+
+
+       <script src="js/json/json2.js" type="text/javascript" ></script>
+       <script src="js/json/jsonStringify.js" type="text/javascript" ></script>
+
+
+<script src="js/iscroll.js" type="text/javascript"></script>
+<script type="text/javascript">
+		/* Local JavaScript Here */
+		var initScrolling = function() {
+			var scroller = new iScroll('scroller', { bounceLock:true, desktopCompatibility: true});
+			var buttons = document.getElementsByClassName("button");
+			for (var i = 0, len = buttons.length; i < len; i++) {
+				buttons[i].addEventListener("touchstart", function() {
+					this.className = "button touched";
+				});
+				buttons[i].addEventListener("touchend", function() {
+					this.className = "button";
+				});
+			}
+		};
+
+
+            var myScroll;
+            function loaded() {
+                    myScroll = new iScroll('wrapper1', { scrollbarClass: 'myScrollbar' });
+            }
+
+            document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+            document.addEventListener('DOMContentLoaded', loaded, false);
+
+ 
+ 
+            function TestCall(){
+                // document.getElementById('baseDiv').style.display='block';
+                    var testData= "{'status':{'message':'ok','code':0},'profile':{'country':null,'identifier':'http://www.facebook.com/profile.php?id=100002241130835','twentyatUserId':'f537ea69-ea07-484c-8746-97a2814159c6','middleName':null,'photo':'http://graph.facebook.com/100002241130835/picture?type=large','locality':'Surat','postalCode':null,'region':' Gujarat','streetAddress':null,'email':'20at.demo@gmail.com','isActive':true,'firstName':'TwentyAt','lastName':'Demo','friendlyName':'TwentyAt Demo','mobilePhone':null,'twentyatGroups':[{'twentyatUserId':'f537ea69-ea07-484c-8746-97a2814159c6','twentyatGroupId':11,'groupName':'20@ Group','friendsMappings':[]}],'contactPersons':[{'country':'','identifier':null,'twentyatUserId':'f537ea69-ea07-484c-8746-97a2814159c6','middleName':null,'photo':'http://graph.facebook.com/100002002832778/picture?type=normal','locality':'','postalCode':null,'region':'','streetAddress':null,'email':null,'firstName':'Sagar','lastName':'Pambhar','friendlyName':null,'mobilePhone':null,'contactId':0,'socialNetworkId':100002002832778},{'country':'','identifier':null,'twentyatUserId':'f537ea69-ea07-484c-8746-97a2814159c6','middleName':null,'photo':'http://graph.facebook.com/100000934539911/picture?type=normal','locality':'','postalCode':null,'region':'','streetAddress':null,'email':null,'firstName':'Riddhish','lastName':'Ojha','friendlyName':null,'mobilePhone':null,'contactId':1,'socialNetworkId':100000934539911},{'country':'','identifier':null,'twentyatUserId':'f537ea69-ea07-484c-8746-97a2814159c6','middleName':null,'photo':'http://graph.facebook.com/100000519446869/picture?type=normal','locality':'','postalCode':null,'region':'','streetAddress':null,'email':null,'firstName':'Ishita','lastName':'Patel','friendlyName':null,'mobilePhone':null,'contactId':2,'socialNetworkId':100000519446869},{'country':'','identifier':null,'twentyatUserId':'f537ea69-ea07-484c-8746-97a2814159c6','middleName':null,'photo':'http://graph.facebook.com/717183823/picture?type=normal','locality':'','postalCode':null,'region':'','streetAddress':null,'email':null,'firstName':'Mayuri','lastName':'Ruparel','friendlyName':null,'mobilePhone':null,'contactId':3,'socialNetworkId':717183823},{'country':'','identifier':null,'twentyatUserId':'f537ea69-ea07-484c-8746-97a2814159c6','middleName':null,'photo':'http://graph.facebook.com/716587413/picture?type=normal','locality':'','postalCode':null,'region':'','streetAddress':null,'email':null,'firstName':'Kalpesh','lastName':'Bhimani','friendlyName':null,'mobilePhone':null,'contactId':4,'socialNetworkId':716587413}],'messages':[],'socialNetworkId':100002241130835}}";
+
+                    var objJson=eval('('+testData+')');
+                   createFriendElements(objJson);  
+            }
+
+
+
+	</script>
+
+
+
+ 
+        </head>
+        <body>
+<app> </app>
+<div id="main-wrapper"> 
+    <div id="header1"> <a href="#" onclick="TestCall()" class="navbutton back"></a> <b>Add Friends</b> 
+        <a class="continue navbutton" href="#" onclick="callReviewFriends();"></a>
+          <div class="clear"></div>
+          <div class="marB5">
+             <!--  Search  -->  <form id="search" action="">
+                  <input type="text" name="search-text" placeholder="Search for friends on facebook" id="search-text" class=" ui-input-search search" />
+            </form></div>
+            </div>
+
+
+ 
+<div id="wrapper1">
+
+      
+
+
+
+
+</div>
+
+        </div>
+</body>
+</html>
+
+
+
+
+
+
+

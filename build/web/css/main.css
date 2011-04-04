@@ -1,0 +1,412 @@
+body{
+	height:100%;
+	padding: 0;
+	margin: 0;
+}
+div.fullscreen{
+	padding:0;
+	margin:0;
+	display:block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	
+}
+
+div.bottomrest{
+	padding:0;
+	margin:0;
+	display:block;
+	position:absolute;
+	bottom:0;
+	left:0;
+	height: 34%;
+	width:100%%;
+	
+}
+div.login{
+	padding: 0;
+	margin: 0;
+	position: absolute;;
+	bottom: 12%;
+	left: 3px;
+	width: 100%;
+	height: 
+		
+}
+div.recent{
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	top:0;
+	left:0;
+	height: 100%;
+	width:100%;
+	
+	}
+	
+#add_head{
+	padding: 0;
+	margin: 0;
+	position: absolute;;
+	top: 0;
+	left:0;
+	width: 100%;
+	height: 18%;
+	
+	
+	}
+#inline{
+	padding: 0;
+	margin: 0;
+	position: absolute;;
+	top:15px;
+	right:0;
+		
+}
+
+.fbfriendlist{
+	padding-top:0px;
+	margin: 0;
+	position: absolute;
+	top:72px;
+	left:0;
+	width:100%;
+	height:82%;
+	
+	}
+	
+#fbfriend{
+	
+	padding-top:0px;
+	margin:0;
+	position: absolute;
+	top:0px;
+	left:0;
+	width: 100%;
+	height:13%; 
+	
+	}
+	.fbfriendtable{
+	 padding-top:0px;
+	 margin: 0;
+	 position: absolute;
+	 top:72px;
+	 left:0;
+	 width: 100%;
+	
+	
+	}
+	#add_head2{
+	padding: 0;
+	margin: 0;
+	position: absolute;;
+	top: 0;
+	left:0;
+	width: 100%;
+	height: 10%;
+	
+	
+	}
+	#test{
+	
+	padding: 0;
+	margin: 0;
+	position: absolute;;
+	top: 0;
+	left:0;
+	width: 100%;
+	height: 100%;
+	
+	}
+	#connect,{
+	padding: 0;
+	margin: 0;
+	position: absolute;;
+	top: 0;
+	left:0;
+	width: 100%;
+	height: 100%;
+	
+	}
+	#connect_header,#review_header{
+		padding: 0;
+	margin: 0;
+	position: absolute;;
+	top: 0;
+	left:0;
+	width: 100%;
+	height: 10%;
+	}
+	#back{
+	padding: 0;
+	margin: 0;
+	position: absolute;;
+	top: 3px;
+	left:3px;
+	width: 25%;
+	height: 50%;
+	
+	
+	}
+	#janrain_login{
+	padding: 0;
+	margin: 0;
+	position: absolute;;
+	top: 10%;
+	left:0px;
+	width: 100%;
+	height: 90%;
+	background-color: red;
+	}
+	#addfriend_header{
+	padding: 0;
+	margin: 0;
+	position: absolute;;
+	top: 0;
+	left:0;
+	width: 100%;
+	height: 20%;
+	
+	}
+	#continue,#done{
+	padding: 0;
+	margin: 0;
+	position: absolute;;
+	top: 4px;
+	left:78%;
+	width: 35%;
+	height: 50%;
+	}
+	
+	#searchbox1{
+	padding: 0;
+	margin: 0;
+	position: absolute;;
+	top:52%;
+	left:3px;
+	width: 97%;
+	height: 30%;
+	border-radius: 6px;
+		
+}
+#fbfriendpage{
+	padding: 0;
+	margin: 0;
+	position: absolute;;
+	top: 19%;
+	left:0;
+	width: 100%;
+	height: 90%;
+	background-color:#dedede;
+	
+	}
+	#fbfriendlist1{
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 90%;
+	
+	}
+	#fbfriendlist2,#fbfriendlist3,#fbfriendlist4,#fbfriendlist5,#fbfriendlist6,#fbfriendlist7{
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	position: relative;
+	height: 92%;
+	top:0%;
+	
+	}
+	
+	#radiobutton1{
+	
+	width: 10%;
+	margin:0;
+	position:absolute;
+	top:5%;
+	padding:0;
+	left 6%;
+	height :7%;
+	}
+	
+	#fbfriendname1{
+	width: 63%;
+	margin:0;
+	position:absolute;
+	top:3px;
+	padding:0;
+	left:12%;
+	height :15%;
+	
+	
+	}
+	#fbfriendimage1{
+	width: 25%;
+	margin:0;
+	position:absolute;
+	top:0%;
+	padding:0;
+	left:75%;
+	height :15%;
+	}
+	
+	#radiobutton2,#radiobutton3,#radiobutton4,#radiobutton5,#radiobutton6,#radiobutton7{
+	
+	width: 12%;
+	margin:0;
+	position:relative;
+	top:33%;
+	padding:0;
+	left 2%;
+	height :8%;
+	}
+	#fbfriendname2,#fbfriendname3,#fbfriendname4,#fbfriendname5,#fbfriendname6,#fbfriendname7{
+	width: 63%;
+	margin:0;
+	position:relative;
+	top:3px;
+	padding:0;
+	left:0%;
+	height :15%;
+	
+	
+	}
+	#fbfriendimage2,#fbfriendimage3,#fbfriendimage4,#fbfriendimage5,#fbfriendimage6,#fbfriendimage7{
+	width: 25%;
+	margin:0;
+	position:relative;
+	top:0%;
+	padding:0;
+	left:0%;
+	height :15%;
+	
+		
+	}
+	#review_friends{
+	padding: 0;
+	margin: 0;
+	position: absolute;;
+	top: 10%;
+	left:0px;
+	width: 100%;
+	height: 90%;
+	
+	
+	}
+	#review_friends1{
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	top: 0%;
+	left:0px;
+	width: 100%;
+	height: 40%;
+	
+	
+	}
+	#selectedfbfriendimage{
+	width: 25%;
+	margin:0;
+	position:absolute;
+	top:5%;
+	padding:0;
+	left:3%;
+	height :35%;
+	}
+	#selectedfbfriendname{
+	width: 100%;
+	margin:0;
+	position:absolute;
+	top:3%;
+	padding:0;
+	left:0%;
+	height :35%;
+	border-bottom-right-radius:1px;
+	border-bottom-left-radius:1px;
+	border-top-right-radius:4px;
+	border-top-left-radius:4px;
+	background-color: white;
+	
+	
+	}
+	h3{
+	font-style: normal; 
+	font: lighter;
+	font-size: medium;
+	}
+	#requiredemailaddress{
+	width: 100%;
+	margin:0;
+	position:relative;
+	top:39%;
+	padding:0;
+	left:0%;
+	height :30%;
+	
+	border-bottom-right-radius:1px;
+	border-bottom-left-radius:1px;
+	border-top-right-radius:1px;
+	border-top-left-radius:1px;
+	background-color: white;
+	
+	}
+	#delete{
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 20%;
+	left : 85%;
+	width: 35%;
+	height:50%;
+	
+	}
+	#namewithEmail{
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	width: 65%;
+	top:3%;
+	left:32%;
+	height: 90%;
+	
+	
+	}
+	#addEmailfromContacts{
+	width: 100%;
+	margin:0;
+	position:relative;
+	top:39.5%;
+	padding:0;
+	left:0%;
+	height :30%;
+	
+	border-bottom-right-radius:4px;
+	border-bottom-left-radius:4px;
+	border-top-right-radius:1px;
+	border-top-left-radius:1px;
+	background-color: white;
+	}
+	#selectedfbfriendimage2{
+	width: 25%;
+	margin:0;
+	position:relative;
+	top:5%;
+	padding:0;
+	left:3%;
+	height :15%;	
+	}
+	#review_friends2,#review_friends3{
+	padding:0;
+	margin0;
+	position:relative;
+	top:0%;
+	left:0px;
+	width: 100%;
+	height: 40%;
+	
+	
+	}
+	
+	

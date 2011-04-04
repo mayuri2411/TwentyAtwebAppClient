@@ -1,0 +1,53 @@
+body{
+	background-color: #dedede;
+	margin: 0 auto;
+	padding: 0; 
+	width: 320px;
+	/*height:480px;*/
+}
+
+img {
+	width: 64px;
+	height: 48px;
+	border-radius: 3px;
+}
+
+.twentyatconverseheader {
+	vertical-align: top;
+	width: 100%; 
+	background-image:url('../images/navbar_bg.png');
+	height: 34px;
+	margin: 0 auto;
+}
+
+.twentyatheaderbtn {
+	top: 0px; 
+	left: 0px; 
+	padding: 0px; 
+	text-align: right; 
+	margin: 0 auto; 
+	width: 50%; 
+	display: inline;
+}
+
+div.twentyatheaderbtn img {
+	width: inherit; 
+	float: left; 
+	height: 32px
+}
+
+.twentyatfooter {
+	background-color: #2c2c2a;
+
+	vertical-align: bottom;
+	/*border:thin solid red;*/
+}
+
+div.twentyatfooter img {
+	top: 0px; 
+	left: 0px; 
+	padding: 0px; 
+	margin: 0; 
+	float: left;
+	
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Untitled Document</title>
+	<link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/jquery.mobile-1.0a4.css" />
+	<script src="js/iscroll.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		/* Local JavaScript Here */
+		var initScrolling = function() {
+			var scroller = new iScroll('scroller', { bounceLock:true, desktopCompatibility: true});
+			var buttons = document.getElementsByClassName("button");
+			for (var i = 0, len = buttons.length; i < len; i++) {
+				buttons[i].addEventListener("touchstart", function() {
+					this.className = "button touched";
+				});
+				buttons[i].addEventListener("touchend", function() {
+					this.className = "button";
+				});
+                            }
+                    };
+
+                var myScroll;
+                function loaded() {
+                        myScroll = new iScroll('wrapper', { scrollbarClass: 'myScrollbar' });
+                }
+                document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+                document.addEventListener('DOMContentLoaded', loaded, false);
+
+
+	</script>
+	</head>
+	<body>
+<app> </app>
+<div id="main-wrapper">
+      <div id="header"> <a href="#home" class="navbutton back"></a> <b>Review</b> <a class="continue navbutton"></a> </div>
+      <div id="wrapper">
+    <div >
+
+          <!-- Review friend row start  -->
+     <div class="div-rev-friend">
+        <div class="rev-FBF-Img "><img src="images/pattern.png"></div>
+        <div class="rev-friend-div ">
+              <ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+            <li data-theme="c" class="ui-btn ui-btn-icon-right ui-li ui-corner-top ui-btn-up-c">
+                  <div class="ui-btn-inner ui-li ui-corner-top">
+                <div class="ui-btn-text"><a href="#" class="ui-link-inherit">Facebook friend name</a></div>
+                <span class="ui-icon ui-icon-minus" data-theme="c"></span></div>
+                </li>
+            <li data-theme="c" class="ui-btn ui-btn-icon-right ui-li ui-btn-up-c">
+                  <div class="ui-btn-inner ui-li">
+
+                <div data-role="fieldcontain">
+
+       <input type="text" name="name" id="name" value=""  />
+	 <!--<a href="#" class="ui-link-inherit">Email Address.</a>--></div>
+              </div>
+                </li>
+            <li data-theme="c" class="ui-btn ui-btn-icon-right ui-li ui-corner-bottom ui-btn-up-c">
+                  <div class="ui-btn-inner ui-li ui-corner-bottom">
+                <div class="ui-btn-text"><a href="#" class="ui-link-inherit">Add Email Address.</a></div>
+                <span class="ui-icon ui-icon-arrow-r"></span></div>
+                </li>
+          </ul>
+            </div>
+      </div>
+          <!-- Review friend row end  -->
+
+          
+        </div>
+  </div>
+    </div>
+</body>
+</html>

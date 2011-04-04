@@ -1,0 +1,43 @@
+{
+"status":{"message":"ok","code":0},
+"profile":{
+            "country":null,
+            "identifier":"http://www.facebook.com/profile.php?id=100002241130835",
+            "twentyatUserId":"f537ea69-ea07-484c-8746-97a2814159c6",
+            "middleName":null,
+            "photo":"http://graph.facebook.com/100002241130835/picture?type=large",
+            "locality":"Surat",
+            "postalCode":null,
+            "region":" Gujarat",
+            "streetAddress":null,
+            "email":"20at.demo@gmail.com",
+            "isActive":true,
+            "firstName":"TwentyAt",
+            "lastName":"Demo",
+            "friendlyName":"TwentyAt Demo",
+            "mobilePhone":null,
+            "twentyatGroups":[{
+                        "twentyatUserId":"f537ea69-ea07-484c-8746-97a2814159c6",
+                        "twentyatGroupId":11,"groupName":"20@ Group","friendsMappings":[]
+                            }],
+            "contactPersons":[
+                {
+                    "country":"",
+                    "identifier":null,
+                    "twentyatUserId":"f537ea69-ea07-484c-8746-97a2814159c6",
+                    "middleName":null,
+                    "photo":"http://graph.facebook.com/100002002832778/picture?type=normal",
+                    "locality":"",
+                    "postalCode":null,
+                    "region":"",
+                    "streetAddress":null,
+                    "email":null,
+                    "firstName":"Sagar",
+                    "lastName":"Pambhar",
+                    "friendlyName":null,
+                    "mobilePhone":null, 
+                    "contactId":0,
+                    "socialNetworkId":100002002832778
+                },
+
+{"country":"","identifier":null,"twentyatUserId":"f537ea69-ea07-484c-8746-97a2814159c6","middleName":null,"photo":"http://graph.facebook.com/100000934539911/picture?type=normal","locality":"","postalCode":null,"region":"","streetAddress":null,"email":null,"firstName":"Riddhish","lastName":"Ojha","friendlyName":null,"mobilePhone":null,"contactId":1,"socialNetworkId":100000934539911},{"country":"","identifier":null,"twentyatUserId":"f537ea69-ea07-484c-8746-97a2814159c6","middleName":null,"photo":"http://graph.facebook.com/100000519446869/picture?type=normal","locality":"","postalCode":null,"region":"","streetAddress":null,"email":null,"firstName":"Ishita","lastName":"Patel","friendlyName":null,"mobilePhone":null,"contactId":2,"socialNetworkId":100000519446869},{"country":"","identifier":null,"twentyatUserId":"f537ea69-ea07-484c-8746-97a2814159c6","middleName":null,"photo":"http://graph.facebook.com/717183823/picture?type=normal","locality":"","postalCode":null,"region":"","streetAddress":null,"email":null,"firstName":"Mayuri","lastName":"Ruparel","friendlyName":null,"mobilePhone":null,"contactId":3,"socialNetworkId":717183823},{"country":"","identifier":null,"twentyatUserId":"f537ea69-ea07-484c-8746-97a2814159c6","middleName":null,"photo":"http://graph.facebook.com/716587413/picture?type=normal","locality":"","postalCode":null,"region":"","streetAddress":null,"email":null,"firstName":"Kalpesh","lastName":"Bhimani","friendlyName":null,"mobilePhone":null,"contactId":4,"socialNetworkId":716587413}],"messages":[],"socialNetworkId":100002241130835}}

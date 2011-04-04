@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
+
+<script src="js/iscroll.js" type="text/javascript"></script>
+<script type="text/javascript">
+		/* Local JavaScript Here */
+		var initScrolling = function() {
+			var scroller = new iScroll('scroller', { bounceLock:true, desktopCompatibility: true});
+			var buttons = document.getElementsByClassName("button");
+			for (var i = 0, len = buttons.length; i < len; i++) {
+				buttons[i].addEventListener("touchstart", function() {
+					this.className = "button touched";
+				});
+				buttons[i].addEventListener("touchend", function() {
+					this.className = "button";
+				});
+			}
+		};
+			
+
+var myScroll;
+function loaded() {
+	myScroll = new iScroll('wrapper', { scrollbarClass: 'myScrollbar' });
+}
+
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+document.addEventListener('DOMContentLoaded', loaded, false);
+
+
+	</script>
+</head>
+<body>
+	<app>
+	</app>
+	<div id="main" ui-background-style="striped" ui-navigation-status="current">
+		
+  
+   
+  <div id="scroller"> <a href="Add_friends.html"><img src="images/0_3_Connect_with_Facebook.png"  alt="facebook" border="0" usemap="#Map" class="img" /></a>
+         
+  </div>
+                
+               
+
+		
+</div>    
+</body>
+</html>
